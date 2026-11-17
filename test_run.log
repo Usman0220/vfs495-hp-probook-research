@@ -1,0 +1,24 @@
+=== Device Information ===
+Host: HP ProBook 430 G3
+OS: Kali Linux x86_64 (Linux localhost 7.2.15+kali-amd64)
+USB ID: Bus 001 Device 006: ID 138a:003f Validity Sensors, Inc. VFS495 Fingerprint Reader
+Device Descriptor:
+  bcdUSB               1.10
+  bDeviceClass          255 Vendor Specific Class
+  bDeviceSubClass        18 [unknown]
+  bDeviceProtocol       255 
+  idVendor           0x138a Validity Sensors, Inc.
+  idProduct          0x003f VFS495 Fingerprint Reader
+  bcdDevice            1.04
+  iSerial                 1 00b052f85b80
+
+=== Verification Capture Output ===
+$ sudo ./build/vfs495-tool capture build/hp/commands.bin /tmp/test_swipe 1 20
+session ready in 0.46 s
+[1/1] armed in 0.04 s: swipe now
+   first data 1872 ms after arming; pauses: longest 2 ms; over 25 ms at frame:ms none
+   region 823 lines, trusted 781, confident 97%, fast 0%, median lag 23, still 2%, coverage 85% -> ok
+   581536 bytes, 2137 lines -> 286 rows (print lines 0-814) in 0.17 s: /tmp/test_swipe.1.pgm
+
+$ file /tmp/test_swipe.1.pgm
+/tmp/test_swipe.1.pgm: Netpbm image data, size = 200 x 286, rawbits, greymap

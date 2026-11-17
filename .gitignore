@@ -1,0 +1,6 @@
+# Ignore binaries and temporary captures
+*.pgm
+*.raw
+*.tar
+commands.bin
+vfs495-tool
